@@ -29,13 +29,13 @@ int main(int argc, char* argv[])
     ap.add_help_arg({"--help"}, "Display this help and exit.");
     ap.add_gplv3_version_arg({"--version"}, "Output version information and exit",
                              "1.0.0", "2018", "Killian Poulaud");
-    ap.add_foreign_arg("TARGET-WIDTH", "TARGET-WIDTH", "Specify the target width",
+    ap.add_keyless_arg("TARGET-WIDTH", "TARGET-WIDTH", "Specify the target width",
                        {spdap::avt_t::UINT64}, 1, 1);
-    ap.add_foreign_arg("TARGET-HEIGHT", "TARGET-HEIGHT", "Specify the target height",
+    ap.add_keyless_arg("TARGET-HEIGHT", "TARGET-HEIGHT", "Specify the target height",
                        {spdap::avt_t::UINT64}, 1, 1);
-    ap.add_foreign_arg("SOURCE-WIDTH", "SOURCE-WIDTH", "Specify the source width",
+    ap.add_keyless_arg("SOURCE-WIDTH", "SOURCE-WIDTH", "Specify the source width",
                        {spdap::avt_t::UINT64}, 1, 1);
-    ap.add_foreign_arg("SOURCE-HEIGHT", "SOURCE-HEIGHT", "Specify the source height",
+    ap.add_keyless_arg("SOURCE-HEIGHT", "SOURCE-HEIGHT", "Specify the source height",
                        {spdap::avt_t::UINT64}, 1, 1);
     ap.parse_args((unsigned int)argc, argv);
     
