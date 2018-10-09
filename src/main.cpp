@@ -20,23 +20,24 @@
 #include <iostream>
 
 #include <speed/speed.hpp>
+#include <speed/speed_alias.hpp>
 
 
 int main(int argc, char* argv[])
 {
-    spdap::arg_parser ap("aspect_ratio");
+    spd::ap::arg_parser ap("aspect_ratio");
     ap.add_help_text("Options:");
     ap.add_help_arg({"--help"}, "Display this help and exit.");
     ap.add_gplv3_version_arg({"--version"}, "Output version information and exit",
                              "1.0.0", "2018", "Killian Poulaud");
     ap.add_keyless_arg("TARGET-WIDTH", "TARGET-WIDTH", "Specify the target width",
-                       {spdap::avt_t::UINT64}, 1, 1);
+                       {spd::ap::avt_t::UINT64}, 1, 1);
     ap.add_keyless_arg("TARGET-HEIGHT", "TARGET-HEIGHT", "Specify the target height",
-                       {spdap::avt_t::UINT64}, 1, 1);
+                       {spd::ap::avt_t::UINT64}, 1, 1);
     ap.add_keyless_arg("SOURCE-WIDTH", "SOURCE-WIDTH", "Specify the source width",
-                       {spdap::avt_t::UINT64}, 1, 1);
+                       {spd::ap::avt_t::UINT64}, 1, 1);
     ap.add_keyless_arg("SOURCE-HEIGHT", "SOURCE-HEIGHT", "Specify the source height",
-                       {spdap::avt_t::UINT64}, 1, 1);
+                       {spd::ap::avt_t::UINT64}, 1, 1);
     ap.parse_args((unsigned int)argc, argv);
     
     auto trg_wgth = ap.get_front_arg_value_as<std::uint64_t>("TARGET-WIDTH");
@@ -46,10 +47,10 @@ int main(int argc, char* argv[])
     
     std::cout << "Result keeping width  : "
               << src_wgth << " × " << (src_wgth * trg_hght) / (double)trg_wgth
-              << spdios::newl
+              << spd::ios::newl
               << "Result keeping height : "
               << (trg_wgth * src_hght) / (double)trg_hght << " × " << src_hght
-              << spdios::newl;
+              << spd::ios::newl;
     
     return 0;
 }
