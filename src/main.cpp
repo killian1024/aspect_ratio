@@ -26,7 +26,6 @@
 int main(int argc, char* argv[])
 {
     spd::ap::arg_parser ap("aspect_ratio");
-    ap.add_help_text("Options:");
     ap.add_help_arg({"--help"}, "Display this help and exit.");
     ap.add_gplv3_version_arg({"--version"}, "Output version information and exit",
                              "1.0.0", "2018", "Killian Poulaud");
