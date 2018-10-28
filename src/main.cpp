@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with speed. If not, see <http://www.gnu.org/licenses/>.
  */
- 
+
 #include <iostream>
 
 #include <speed/speed.hpp>
@@ -25,7 +25,7 @@
 
 int main(int argc, char* argv[])
 {
-    spd::ap::arg_parser ap("aspect_ratio");
+    spd::ap::arg_parser ap("aspect_ratio", "Compute the aspect ratio of a source using a target.");
     ap.add_help_arg({"--help"}, "Display this help and exit.");
     ap.add_gplv3_version_arg({"--version"}, "Output version information and exit",
                              "1.0.0", "2018", "Killian Poulaud");
@@ -37,6 +37,9 @@ int main(int argc, char* argv[])
                        {spd::ap::avt_t::UINT64}, 1, 1);
     ap.add_keyless_arg("SOURCE-HEIGHT", "SOURCE-HEIGHT", "Specify the source height",
                        {spd::ap::avt_t::UINT64}, 1, 1);
+    ap.add_help_text("");
+    ap.add_help_text("Example:");
+    ap.add_help_text(R"(  $ aspect_ratio 1920 1080 2048 1448)");
     ap.parse_args((unsigned int)argc, argv);
     
     auto trg_wgth = ap.get_front_arg_value_as<std::uint64_t>("TARGET-WIDTH");
