@@ -16,5 +16,5 @@ In order to compile this software you have to use a C++ revision equal or highte
 (ISO/IEC 14882:2017). Also the following libraries and tools are necessary with a version equal or 
 highter the specified one:
 - speed (https://github.com/killian1024/speed)
-- GCC 8.0.1
+- GCC 8.1.0
 - CMake 3.9
