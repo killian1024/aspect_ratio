@@ -1,7 +1,7 @@
 ### aspect_ratio ###
 
 aspect_ratio compute the aspect ratio of a source using a target. For more information use 
-`./aspect_ratio --help` command.
+`aspect_ratio --help` command.
 
 ### Build ###
 
